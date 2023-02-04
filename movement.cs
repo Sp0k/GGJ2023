@@ -2,47 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
+    public Animator animator;
     public float moveSpeed;
-    public float maxHeight;
-    public float minHeight;
-    // Start is called before the first frame update
+
+    private Vector2 movement;
+
+    // Dash variables
+    private float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = .5f, dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
+
     void Start()
     {
-
-        
+        activeMoveSpeed = moveSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        if ((Input.GetKey(KeyCode.UpArrow) == true && transform.position.y<maxHeight))
-        {
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y + moveSpeed * Time.deltaTime, myRigidbody.transform.position.z);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        }
-        if((Input.GetKey(KeyCode.DownArrow) == true && transform.position.y>minHeight))
+        animator.SetFloat("Move", movement.x);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            //down
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y - moveSpeed * Time.deltaTime, myRigidbody.transform.position.z);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x - moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, myRigidbody.transform.position.z);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x + moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, myRigidbody.transform.position.z);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
         }
 
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = moveSpeed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        myRigidbody.MovePosition(myRigidbody.position + movement * activeMoveSpeed * Time.fixedDeltaTime);
     }
 }
