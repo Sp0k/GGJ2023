@@ -615,8 +615,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1362528164}
+  renderer: {fileID: 1362528165}
   animator: {fileID: 1362528168}
   moveSpeed: 6.22
+  idleTimer: 0
   dashSpeed: 3.77
   dashLength: 0.5
   dashCooldown: 1

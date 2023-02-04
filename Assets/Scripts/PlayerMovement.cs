@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
+    public SpriteRenderer renderer;
     public Animator animator;
     public float moveSpeed;
-
     private Vector2 movement;
+
+    public float idleTimer = 0;
 
     // Dash variables
     private float activeMoveSpeed;
@@ -29,8 +31,18 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Move", movement.x);
+        if (movement.x < 0)
+            renderer.flipX = true;
+        else if (movement.x > 0) 
+            renderer.flipX = false;
+
+        if (movement.sqrMagnitude > 0)
+            idleTimer = 0;
+        else
+            idleTimer += Time.deltaTime;
+
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("IdleTime", idleTimer);
 
         if (Input.GetKeyDown(KeyCode.C))
         {
