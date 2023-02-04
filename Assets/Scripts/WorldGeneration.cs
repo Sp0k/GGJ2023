@@ -7,7 +7,7 @@ public class WorldGeneration : MonoBehaviour
     public GameObject[] rooms;
     public Transform player;
     public List<GameObject> roomsList;
-    public int roomSize = 20;
+    public float roomSize = 20;
 
     private int roomCount = 0;
 

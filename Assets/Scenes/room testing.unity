@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1362528164}
   - component: {fileID: 1362528163}
   - component: {fileID: 1362528162}
+  - component: {fileID: 1362528167}
   m_Layer: 0
   m_Name: s_player1
   m_TagString: Untagged
@@ -261,9 +262,36 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2121866407}
+  - {fileID: 1623482860}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1362528167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362528161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &1623482857
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +328,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -317,7 +345,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -340,13 +368,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623482857}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -7.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 1362528166}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782758257
 GameObject:
@@ -378,11 +406,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 6599993940080783223, guid: 3cf6e6da4f644924091293cb13e14c34, type: 3}
-  - {fileID: 6599993940080783223, guid: 10169f081d662e840a9421f9fda1fe41, type: 3}
-  - {fileID: 6599993940080783223, guid: 2e115565bbdb9d64a85d2a46b323d5db, type: 3}
+  - {fileID: 6658710643734884613, guid: d08383a777c304847be8b39b7b1f9564, type: 3}
+  - {fileID: 6658710643734884613, guid: d08383a777c304847be8b39b7b1f9564, type: 3}
+  - {fileID: 1950593557060184113, guid: e23372e7a378c134387773b09870e5bd, type: 3}
+  - {fileID: 475679437955896557, guid: ef2b483f93e2ef947bffdbd9ec28e2a8, type: 3}
+  - {fileID: 7231646081520530471, guid: 2a03f01ba6d71384bb86a4b655ca01fb, type: 3}
   player: {fileID: 1362528166}
   roomsList: []
+  roomSize: 26.88
 --- !u!4 &1782758259
 Transform:
   m_ObjectHideFlags: 0
@@ -396,7 +427,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121866406
 GameObject:
