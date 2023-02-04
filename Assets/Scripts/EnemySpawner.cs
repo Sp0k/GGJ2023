@@ -1,49 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject s_enemy1;
+    public GameObject enemy;
 
     private float swarmerInterval = 3.5f;
     public static int enemyCount = 2;
-    public static bool maxEne = false;
-    // Start is called before the first frame update
+    public static bool maxEnemy = false;
+
     void Start()
     {
-        
-        StartCoroutine(spawnEnemy(swarmerInterval, gameObject));
-        
+        StartCoroutine(spawnEnemy(swarmerInterval, enemy));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
-        
-    }
-
-    private IEnumerator spawnEnemy(float interval, GameObject enemy) {
-        
-        
-        while (!maxEne)
+        while (!maxEnemy)
         {
-            
-            yield return new WaitForSeconds(interval);
-         
-            if(enemyCount<=5)
+            if (enemyCount <= 5)
             {
-            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
                 enemyCount++;
-                Debug.Log(enemyCount);
-            } else {
-                maxEne = true;
+            }
+            else
+            {
+                maxEnemy = true;
                 break;
             }
-            
-          
-        }
-        
-    }
 
+            yield return new WaitForSeconds(interval);
+        }
+    }
 }

@@ -11,6 +11,8 @@ public class WorldGeneration : MonoBehaviour
 
     private int roomCount = 0;
 
+
+    private bool freezeRotiation = false;
     private System.Random random;
 
     void Start()
@@ -22,6 +24,8 @@ public class WorldGeneration : MonoBehaviour
         initialRoom.transform.position = new Vector3(0, 0, 1);
         roomsList.Add(initialRoom);
         roomCount++;
+
+        // To do: random chance to change freeze rotation
 
         GenerateRoom(roomSize);
     }
@@ -47,6 +51,7 @@ public class WorldGeneration : MonoBehaviour
     {
         GameObject nextRoom = Instantiate(rooms[RandomIndex()]);
         nextRoom.transform.position = new Vector3(x, 0, 1);
+        nextRoom.GetComponent<Rigidbody2D>().freezeRotation = freezeRotiation;
 
         roomsList.Add(nextRoom);
         roomCount++;
