@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -9,8 +10,12 @@ public class EnemySpawner : MonoBehaviour
     public static int enemyCount = 2;
     public static bool maxEnemy = false;
 
+    public static Transform player;
+
     void Start()
     {
+        player = FindAnyObjectByType<Player>().transform;
+
         StartCoroutine(spawnEnemy(swarmerInterval, enemy));
     }
 
