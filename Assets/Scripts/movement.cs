@@ -2,45 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
+    public Animator animator;
     public float moveSpeed;
-    public int lifeCounter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        lifeCounter = 3;
 
-    }
+    private Vector2 movement;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) == true)
-        {
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y + moveSpeed * Time.deltaTime, 0);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+    }
 
-        }
-        if(Input.GetKey(KeyCode.DownArrow) == true)
-        {
-            //down
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y - moveSpeed * Time.deltaTime, 0);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x - moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, 0);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x + moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, 0);
-            myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
-        }
-
+    private void FixedUpdate()
+    {
+        myRigidbody.MovePosition(myRigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

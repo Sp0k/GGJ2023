@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
-    public movement player;
-
+    public Player player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.lifeCounter--;
-        Debug.Log(player.lifeCounter);
-    }
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LoseLife()
     {
-        
-        
+        player.lifeCounter--;
+
+        if (player.lifeCounter <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+
     }
 }
