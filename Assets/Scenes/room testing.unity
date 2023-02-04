@@ -611,12 +611,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1362528161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478fb5e55ddfb437da366211520cedd4, type: 3}
+  m_Script: {fileID: 11500000, guid: de06d7a88a2ff6e4c9c2671cab798544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1362528164}
   animator: {fileID: 1362528168}
-  moveSpeed: 7.49
+  moveSpeed: 6.22
+  dashSpeed: 3.77
+  dashLength: 0.5
+  dashCooldown: 1
 --- !u!1 &1623482857
 GameObject:
   m_ObjectHideFlags: 0
