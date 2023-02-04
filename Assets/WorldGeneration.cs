@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WorldGeneration : MonoBehaviour
 {
     public GameObject[] rooms;
     public Transform player;
     public List<GameObject> roomsList;
+    public int roomSize = 20;
 
     private int roomCount = 0;
 
@@ -17,12 +19,11 @@ public class WorldGeneration : MonoBehaviour
         roomsList = new List<GameObject>();
 
         GameObject initialRoom = Instantiate(rooms[0]);
-        initialRoom.transform.position = Vector3.zero;
+        initialRoom.transform.position = new Vector3(0, 0, 1);
         roomsList.Add(initialRoom);
 
         GameObject nextRoom = Instantiate(rooms[RandomIndex()]);
-        int x = 20; 
-        nextRoom.transform.position = new Vector3(x, 0);
+        nextRoom.transform.position = new Vector3(roomSize, 0, 1);
         roomsList.Add(nextRoom);
 
         roomCount += 2;
@@ -30,16 +31,21 @@ public class WorldGeneration : MonoBehaviour
 
     void Update()
     {
-        if (player.position.x > 10 + ((roomCount - 1) * 20) -1)
-        //if (player.position.x > )
+        if (player.position.x > (roomSize / 2) + ((roomCount - 2) * roomSize) -1)
         {
-            // To do: block player from going back
-            Destroy(roomsList[0]);
-            roomsList.RemoveAt(0);
+            if (roomsList.Count > 2)
+            {
+                Destroy(roomsList[0]);
+                roomsList.RemoveAt(0);
+            }
+
             roomsList.Add(Instantiate(rooms[RandomIndex()]));
-            roomsList[1].transform.position = new Vector3(20 + ((roomCount - 2) * 40), 0);
+            roomsList[roomsList.Count - 1].transform.position = new Vector3(roomCount * roomSize, 0, 1);
             roomCount++;
         }
+
+        // if leave room
+        //     block previous room
     }
 
     int RandomIndex() => random.Next(1, rooms.Length - 1);

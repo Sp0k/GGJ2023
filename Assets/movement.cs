@@ -19,26 +19,26 @@ public class movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow) == true)
         {
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y + moveSpeed * Time.deltaTime, myRigidbody.transform.position.z);
+            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y + moveSpeed * Time.deltaTime, 0);
             myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
 
         }
         if(Input.GetKey(KeyCode.DownArrow) == true)
         {
             //down
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y - moveSpeed * Time.deltaTime, myRigidbody.transform.position.z);
+            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x, myRigidbody.transform.position.y - moveSpeed * Time.deltaTime, 0);
             myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x - moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, myRigidbody.transform.position.z);
+            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x - moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, 0);
             myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             //left
-            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x + moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, myRigidbody.transform.position.z);
+            myRigidbody.transform.position = new Vector3(myRigidbody.transform.position.x + moveSpeed * Time.deltaTime, myRigidbody.transform.position.y, 0);
             myRigidbody.transform.Translate(Vector3.forward * Time.deltaTime);
         }
 
