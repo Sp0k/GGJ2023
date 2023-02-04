@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1362528165}
   - component: {fileID: 1362528164}
   - component: {fileID: 1362528167}
-  - component: {fileID: 1362528163}
+  - component: {fileID: 1362528169}
   - component: {fileID: 1362528162}
   - component: {fileID: 1362528168}
   m_Layer: 0
@@ -162,21 +162,6 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &1362528163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362528161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478fb5e55ddfb437da366211520cedd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidbody: {fileID: 1362528164}
-  animator: {fileID: 0}
-  moveSpeed: 7
 --- !u!50 &1362528164
 Rigidbody2D:
   serializedVersion: 4
@@ -313,6 +298,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1362528169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362528161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478fb5e55ddfb437da366211520cedd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRigidbody: {fileID: 1362528164}
+  animator: {fileID: 1362528168}
+  moveSpeed: 7.49
 --- !u!1 &1623482857
 GameObject:
   m_ObjectHideFlags: 0

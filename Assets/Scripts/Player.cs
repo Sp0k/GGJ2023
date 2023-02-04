@@ -5,15 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int lifeCounter = 3;
-    
-    void Start()
-    {
-        
-    }
+    public GameObject[] lifeSprites;
 
-    // Update is called once per frame
-    void Update()
+    public void Hit()
     {
-        
+        lifeCounter--;
+        lifeSprites[lifeCounter].SetActive(false);
     }
 }

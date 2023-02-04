@@ -8,21 +8,6 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.lifeCounter--;
-    }
-
-    public void LoseLife()
-    {
-        player.lifeCounter--;
-
-        if (player.lifeCounter <= 0)
-        {
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-
+        player.Hit();
     }
 }
