@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public int lifeCounter = 3;
     public GameObject[] lifeSprites;
 
-    public void Hit()
+    public void Hit(GameObject enemy)
     {
         lifeCounter--;
         lifeSprites[lifeCounter].SetActive(false);

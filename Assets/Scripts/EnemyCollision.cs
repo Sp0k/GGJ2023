@@ -8,6 +8,6 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.Hit();
+        player.Hit(gameObject);
     }
 }

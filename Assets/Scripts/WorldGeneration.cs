@@ -21,12 +21,9 @@ public class WorldGeneration : MonoBehaviour
         GameObject initialRoom = Instantiate(rooms[0]);
         initialRoom.transform.position = new Vector3(0, 0, 1);
         roomsList.Add(initialRoom);
+        roomCount++;
 
-        GameObject nextRoom = Instantiate(rooms[RandomIndex()]);
-        nextRoom.transform.position = new Vector3(roomSize, 0, 1);
-        roomsList.Add(nextRoom);
-
-        roomCount += 2;
+        GenerateRoom(roomSize);
     }
 
     void Update()
@@ -39,13 +36,20 @@ public class WorldGeneration : MonoBehaviour
                 roomsList.RemoveAt(0);
             }
 
-            roomsList.Add(Instantiate(rooms[RandomIndex()]));
-            roomsList[roomsList.Count - 1].transform.position = new Vector3(roomCount * roomSize, 0, 1);
-            roomCount++;
+            GenerateRoom(roomCount * roomSize);
         }
 
         // if leave room
         //     block previous room
+    }
+
+    private void GenerateRoom(float x)
+    {
+        GameObject nextRoom = Instantiate(rooms[RandomIndex()]);
+        nextRoom.transform.position = new Vector3(x, 0, 1);
+
+        roomsList.Add(nextRoom);
+        roomCount++;
     }
 
     int RandomIndex() => random.Next(1, rooms.Length - 1);

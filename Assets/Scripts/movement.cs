@@ -10,6 +10,11 @@ public class Movement : MonoBehaviour
 
     private Vector2 movement;
 
+    private void Start()
+    {
+        myRigidbody.freezeRotation = true;
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
