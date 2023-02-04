@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
 
         foreach (Collider2D enemies in hitEnemies)
         {
-
+            enemies.GetComponent<EnemyBehavior>().Hit();
         }
     }
 
