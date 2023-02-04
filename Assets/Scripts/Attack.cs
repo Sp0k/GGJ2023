@@ -19,11 +19,14 @@ public class Attack : MonoBehaviour
 
     private void PlayerAttack()
     {
+        Debug.Log("Attacked");
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemies in hitEnemies)
         {
             enemies.GetComponent<EnemyBehavior>().Hit();
+            Debug.Log("Player hit enemy");
         }
     }
 
@@ -33,8 +36,5 @@ public class Attack : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-
-        // Hurt Enemies
-
     }
 }

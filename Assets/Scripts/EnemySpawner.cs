@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemyCount <= 5)
             {
+                Debug.Log("Enemy Spawned");
                 GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
                 enemyCount++;
             }

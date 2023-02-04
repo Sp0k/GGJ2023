@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = FindObjectOfType<Player>();
+        if (collision.gameObject.layer != 10)
+            return; 
 
-        player.Hit(gameObject);
+        collision.gameObject.GetComponent<Player>().Hit();
+
+        Destroy(gameObject);
     }
 }

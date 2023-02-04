@@ -7,14 +7,15 @@ public class Player : MonoBehaviour
     public int lifeCounter = 3;
     public GameObject[] lifeSprites;
 
-    public void Hit(GameObject enemy)
+    /// <summary>
+    /// Run when player is hit
+    /// </summary>
+    public void Hit()
     {
         lifeCounter--;
 
-        Debug.Log(lifeCounter);
+        Debug.Log("Life" + lifeCounter);
 
         // lifeSprites[lifeCounter].SetActive(false);
-
-        enemy.GetComponent<EnemyBehavior>().Die();
     }
 }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public float moveSpeed;
     private Vector2 movement;
+    public Transform attackPoint;
 
     public float idleTimer = 0;
 
@@ -32,9 +33,15 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         if (movement.x < 0)
+        {
             renderer.flipX = true;
-        else if (movement.x > 0) 
+            attackPoint.localPosition = new Vector3(-Mathf.Abs(attackPoint.localPosition.x), attackPoint.localPosition.y, 0);
+        }
+        else if (movement.x > 0)
+        {
             renderer.flipX = false;
+            attackPoint.localPosition = new Vector3(Mathf.Abs(attackPoint.localPosition.x), attackPoint.localPosition.y, 0);
+        }
 
         if (movement.sqrMagnitude > 0)
             idleTimer = 0;

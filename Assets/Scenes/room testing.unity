@@ -442,7 +442,8 @@ GameObject:
   - component: {fileID: 1362528169}
   - component: {fileID: 1362528162}
   - component: {fileID: 1362528168}
-  m_Layer: 0
+  - component: {fileID: 1362528170}
+  m_Layer: 10
   m_Name: s_player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 2121866407}
-  attackRange: 0.37
+  attackRange: 1
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -618,10 +619,70 @@ MonoBehaviour:
   renderer: {fileID: 1362528165}
   animator: {fileID: 1362528168}
   moveSpeed: 6.22
+  attackPoint: {fileID: 2121866407}
   idleTimer: 0
   dashSpeed: 3.77
   dashLength: 0.5
   dashCooldown: 1
+--- !u!114 &1362528170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362528161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2a7780086537545a89927b59a4700b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeCounter: 3
+  lifeSprites: []
+--- !u!1 &1438027784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438027786}
+  - component: {fileID: 1438027785}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1438027785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438027784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91442f61203ed4c7dac571a14435efb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8883100610778422388, guid: d6a4b90ca8149da46a8a972df61a3feb, type: 3}
+--- !u!4 &1438027786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438027784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.433171, y: 0.6426714, z: -9.52059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623482857
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +805,8 @@ MonoBehaviour:
   player: {fileID: 1362528166}
   roomsList: []
   roomSize: 26.88
+  roomCount: 0
+  currentRoom: 0
 --- !u!4 &1782758259
 Transform:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8883100610778422392}
   - component: {fileID: 8883100610778422389}
   - component: {fileID: 8883100610778422393}
-  m_Layer: 0
-  m_Name: Enemy
+  m_Layer: 6
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f0932edfec549ce9eeb93c8a219887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!61 &8883100610778422389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b4c19c90662f3408f3f3dba01618cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  witanonymousn_range: 2.5
+  range: 4.5
   speed: 2.5
-  health: 0
+  health: 1
