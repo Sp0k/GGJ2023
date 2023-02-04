@@ -8,11 +8,13 @@ public class WorldGeneration : MonoBehaviour
     public Transform player;
     public List<GameObject> roomsList;
     public float roomSize = 20;
+    public int roomCount = 0;
 
-    private int roomCount = 0;
+    public int currentRoom = 0;
 
+    private int sameRoomCounter = 0;
+    private int currentRoomIndex = 0;
 
-    private bool freezeRotiation = false;
     private System.Random random;
 
     void Start()
@@ -20,13 +22,7 @@ public class WorldGeneration : MonoBehaviour
         random = new System.Random();
         roomsList = new List<GameObject>();
 
-        GameObject initialRoom = Instantiate(rooms[0]);
-        initialRoom.transform.position = new Vector3(0, 0, 1);
-        roomsList.Add(initialRoom);
-        roomCount++;
-
-        // To do: random chance to change freeze rotation
-
+        GenerateRoom(0);
         GenerateRoom(roomSize);
     }
 
@@ -43,15 +39,29 @@ public class WorldGeneration : MonoBehaviour
             GenerateRoom(roomCount * roomSize);
         }
 
-        // if leave room
-        //     block previous room
+        if (player.position.x > (roomSize / 2) + (currentRoom * roomSize) + 0.5f)
+        {
+            BoxCollider2D[] colliders = roomsList[0].GetComponents<BoxCollider2D>();
+
+            foreach (BoxCollider2D collider2D in colliders)
+            {
+                collider2D.enabled = true;
+            }
+
+            currentRoom++;
+        }
     }
 
     private void GenerateRoom(float x)
     {
-        GameObject nextRoom = Instantiate(rooms[RandomIndex()]);
-        nextRoom.transform.position = new Vector3(x, 0, 1);
-        nextRoom.GetComponent<Rigidbody2D>().freezeRotation = freezeRotiation;
+        if (sameRoomCounter == 3)
+        {
+            sameRoomCounter = 0;
+            currentRoomIndex = RandomIndex();
+        }
+
+        sameRoomCounter++;
+        GameObject nextRoom = Instantiate(rooms[currentRoomIndex], new Vector3(x, 0, 1), Quaternion.identity);
 
         roomsList.Add(nextRoom);
         roomCount++;
