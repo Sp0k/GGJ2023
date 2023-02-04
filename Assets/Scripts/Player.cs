@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     public void Hit(GameObject enemy)
     {
         lifeCounter--;
-        lifeSprites[lifeCounter].SetActive(false);
+
+        Debug.Log(lifeCounter);
+
+        // lifeSprites[lifeCounter].SetActive(false);
+
+        enemy.GetComponent<EnemyBehavior>().Die();
     }
 }

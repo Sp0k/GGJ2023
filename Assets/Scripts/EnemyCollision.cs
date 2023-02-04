@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
-    public Player player;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Player player = FindObjectOfType<Player>();
+
         player.Hit(gameObject);
     }
 }
