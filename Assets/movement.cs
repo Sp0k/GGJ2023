@@ -6,11 +6,12 @@ public class movement : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public float moveSpeed;
+    public int lifeCounter;
     // Start is called before the first frame update
     void Start()
     {
+        lifeCounter = 3;
 
-        
     }
 
     // Update is called once per frame
