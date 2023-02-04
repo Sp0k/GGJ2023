@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1362528164}
   moveSpeed: 7
+  lifeCounter: 0
 --- !u!50 &1362528164
 Rigidbody2D:
   serializedVersion: 4
@@ -379,6 +380,7 @@ MonoBehaviour:
   rooms:
   - {fileID: 6599993940080783223, guid: 3cf6e6da4f644924091293cb13e14c34, type: 3}
   - {fileID: 6599993940080783223, guid: 10169f081d662e840a9421f9fda1fe41, type: 3}
+  - {fileID: 6599993940080783223, guid: 2e115565bbdb9d64a85d2a46b323d5db, type: 3}
   player: {fileID: 1362528166}
   roomsList: []
 --- !u!4 &1782758259
