@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +15,16 @@ public class Player : MonoBehaviour
     {
         lifeCounter--;
 
-        Debug.Log("Life" + lifeCounter);
+        lifeSprites[lifeCounter].SetActive(true);
 
-        // lifeSprites[lifeCounter].SetActive(false);
+        if (lifeCounter <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        // 
     }
 }
