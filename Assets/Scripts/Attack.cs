@@ -22,19 +22,19 @@ public class Attack : MonoBehaviour
     {
         playerAnim.SetBool("Attack", true);
 
+        StartCoroutine(AttackDamage());
+    }
+
+    private IEnumerator AttackDamage()
+    {
+        yield return new WaitForSeconds(0.4f);
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemies in hitEnemies)
         {
             enemies.GetComponent<EnemyBehavior>().Hit();
         }
-
-        StartCoroutine(PlayerAttackAnim());
-    }
-
-    private IEnumerator PlayerAttackAnim()
-    {
-        yield return new WaitForSeconds(0.5f);
 
         playerAnim.SetBool("Attack", false);
     }

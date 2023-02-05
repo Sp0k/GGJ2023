@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 public class WorldGeneration : MonoBehaviour
 {
     public GameObject[] rooms;
+    public EnemySpawner spawner;
     public Transform player;
     public List<GameObject> roomsList;
     public GameObject gate;
@@ -43,6 +44,8 @@ public class WorldGeneration : MonoBehaviour
             }
 
             GenerateRoom(roomCount * roomSize);
+
+            spawner.maxEnemyCount += 5;
         }
 
         if (player.position.x > (roomSize / 2) + (currentRoom * roomSize) + 0.5f)
