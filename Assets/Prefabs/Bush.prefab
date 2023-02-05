@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7467524262302036717}
   - component: {fileID: 4418087052070985002}
   - component: {fileID: 4418087052070985003}
-  m_Layer: 6
+  - component: {fileID: -8963033413505242196}
+  m_Layer: 4
   m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,3 +146,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-8963033413505242196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964419470974646217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bd701d78ef77b4ab7540a82eeb6d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghost: {fileID: 7152123820381869971, guid: 687682991a010524da30f908cc436108, type: 3}
+  range: 4.5
+  speed: 3
+  health: 1

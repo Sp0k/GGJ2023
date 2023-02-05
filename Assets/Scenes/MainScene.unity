@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5964419470974646217, guid: f9135f0520b517b4d998237976d21e43, type: 3}
-  maxEnemyCount: 5
+  maxEnemyCount: 2
 --- !u!4 &651688073
 Transform:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   attackRange: 1.32
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 80
 --- !u!1 &2097225693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,4 +1592,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7152123820381869971, guid: 687682991a010524da30f908cc436108, type: 3}
-  maxEnemyCount: 5
+  maxEnemyCount: 3
