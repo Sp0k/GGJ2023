@@ -38,11 +38,6 @@ public class EnemySpawner : MonoBehaviour
                 GameObject newEnemy = Instantiate(enemy, new Vector3(player.position.x + x, y, 0), Quaternion.identity);
                 enemyCount++;
             }
-            else
-            {
-                maxEnemy = true;
-                break;
-            }
 
             yield return new WaitForSeconds(interval);
         }

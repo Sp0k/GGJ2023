@@ -33,7 +33,10 @@ public class Attack : MonoBehaviour
 
         foreach (Collider2D enemies in hitEnemies)
         {
-            enemies.GetComponent<EnemyBehavior>().Hit();
+            if (enemies.gameObject.layer == 6)
+                enemies.GetComponent<EnemyBehavior>().Hit();
+            else 
+                enemies.GetComponent<BushBehavior>().Hit();
         }
 
         playerAnim.SetBool("Attack", false);

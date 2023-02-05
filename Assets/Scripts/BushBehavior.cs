@@ -36,6 +36,6 @@ public GameObject ghost;
     public void Die()
     {
         Instantiate(ghost, transform.position, Quaternion.identity);
-        Destory(GameObject);
+        Destroy(gameObject);
     }
 }
