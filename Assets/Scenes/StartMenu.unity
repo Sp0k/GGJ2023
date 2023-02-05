@@ -381,12 +381,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575564389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400, y: -203.46822, z: 0}
+  m_LocalPosition: {x: -392, y: -162.46823, z: 0}
   m_LocalScale: {x: 1.1560694, y: 1.1560694, z: 1.1560694}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 985305429}
-  m_RootOrder: 6
+  m_Father: {fileID: 824376072}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &575564391
 MonoBehaviour:
@@ -455,6 +455,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680909570}
+  - {fileID: 575564390}
   m_Father: {fileID: 985305429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -548,7 +549,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 5
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &824376075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -657,7 +658,6 @@ RectTransform:
   - {fileID: 274562942}
   - {fileID: 1409911284}
   - {fileID: 1682984649}
-  - {fileID: 575564390}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -901,7 +901,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.33901095, g: 0.6698113, b: 0.3254272, a: 1}
+    m_NormalColor: {r: 0.5382205, g: 0.8113208, b: 0.34060165, a: 1}
     m_HighlightedColor: {r: 0.13927977, g: 0.4811321, b: 0.052198302, a: 1}
     m_PressedColor: {r: 0.065871745, g: 0.8867924, b: 0.0292809, a: 1}
     m_SelectedColor: {r: 0.12791567, g: 0.4339623, b: 0.08802065, a: 1}
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 5
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1273290183
 CanvasRenderer:
   m_ObjectHideFlags: 0
