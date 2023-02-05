@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         score = 0;
-        audioManager.Play("level");
+        audioManager.Play("level_music");
     }
 
     public static void IncrementScore() 

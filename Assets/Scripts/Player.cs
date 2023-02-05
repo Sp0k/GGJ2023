@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         //startTransition.SetActive(true);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
     }
 
     private void disableStartScreen() {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine.Audio;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning("Sound not found!");
             return;
-        }
+        } else Debug.Log("Song found");
         s.audioSource.Play();
     }
 

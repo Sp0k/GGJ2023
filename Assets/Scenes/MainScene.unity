@@ -168,11 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: level
+  - name: level_music
     clip: {fileID: 8300000, guid: 0da1d65950e82f043a87a15d493e2eb0, type: 3}
-    volume: 0.882
-    pitch: 0
-    loop: 0
+    volume: 1
+    pitch: 1
+    loop: 1
     audioSource: {fileID: 0}
 --- !u!1 &303085807
 GameObject:
@@ -372,6 +372,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458623531}
   m_CullTransparentMesh: 1
+--- !u!1 &528060484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528060485}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528060485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528060484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.635569, y: 2.062163, z: -24.5799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618784253
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +438,7 @@ MonoBehaviour:
   - {fileID: 475679437955896557, guid: ef2b483f93e2ef947bffdbd9ec28e2a8, type: 3}
   - {fileID: 7231646081520530471, guid: 2a03f01ba6d71384bb86a4b655ca01fb, type: 3}
   spawner: {fileID: 2097225695}
-  spawner2: {fileID: 651688072}
+  spawner2: {fileID: 0}
   player: {fileID: 1822901397}
   roomsList: []
   gate: {fileID: 2810903266351727061, guid: 45e6b24c04fe53441b3bb36106c2c045, type: 3}
@@ -459,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5964419470974646217, guid: f9135f0520b517b4d998237976d21e43, type: 3}
-  maxEnemyCount: 2
+  maxEnemyCount: 5
   enemyCount: 2
   maxEnemy: 0
 --- !u!4 &651688073
@@ -1556,7 +1587,7 @@ MonoBehaviour:
   attackRange: 1.32
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 80
+    m_Bits: 64
 --- !u!1 &2097225693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7152123820381869971, guid: 687682991a010524da30f908cc436108, type: 3}
-  maxEnemyCount: 3
+  maxEnemyCount: 5
   enemyCount: 2
   maxEnemy: 0
