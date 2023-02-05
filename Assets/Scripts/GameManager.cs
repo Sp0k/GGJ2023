@@ -37,8 +37,13 @@ public class GameManager : MonoBehaviour
     public static void IncrementScore() 
     { 
         score++;
-
+        
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.scoreText.text = "Score: " + score.ToString();
+        if(score > highScore)
+        {
+            highScore = score;
+            UpdateHighScore(score);
+        }
     }
 }
