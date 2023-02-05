@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static int score { get; private set; }
     public static int highScore { get; private set; }
     public static int highestLevel { get; private set; }
+   // private GameObject startTransition; 
 
     public static void Save()
     {
