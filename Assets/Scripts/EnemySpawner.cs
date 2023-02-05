@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
+    public int maxEnemyCount = 5;
 
     private float swarmerInterval = 3.5f;
     public static int enemyCount = 2;
@@ -23,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (!maxEnemy)
         {
-            if (enemyCount <= 5)
+            if (enemyCount <= maxEnemyCount)
             {
                 GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
                 enemyCount++;

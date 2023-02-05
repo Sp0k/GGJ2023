@@ -6,6 +6,8 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Hit with" + collision.gameObject.layer);
+
         if (collision.gameObject.layer != PLAYER_LAYER)
             return; 
 
