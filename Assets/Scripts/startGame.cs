@@ -12,7 +12,7 @@ public class startGame : MonoBehaviour
         SceneManager.LoadScene(1);
       
     }
-    public void  OnClick() {
+    public void OnClick() {
         if(isStart) {
             SceneManager.LoadScene(1);
            

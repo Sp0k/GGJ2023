@@ -16,10 +16,10 @@ public class MainMenuCommands : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(1);
         } else if (Input.GetKey(KeyCode.C))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(6);
         }else if (Input.GetKey(KeyCode.Q)) {
             Application.Quit();
         }

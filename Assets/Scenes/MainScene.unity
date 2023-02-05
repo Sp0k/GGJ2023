@@ -288,8 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4481451515ceae649a25654b0aeacda6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScoreText: {fileID: 0}
-  highestLevelText: {fileID: 0}
   scoreText: {fileID: 1116738942}
 --- !u!1 &458623531
 GameObject:
@@ -1059,7 +1057,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -210.68207, y: 0, z: 153.59415, w: 0}
+  m_margin: {x: -210.68207, y: -19.827564, z: 153.59415, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -17,7 +17,7 @@ public class playAgain : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(1);
         }
     }
 }

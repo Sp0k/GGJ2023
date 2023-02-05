@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    private void Start()
+    {
+        score = 0;
+    }
+
     public static void IncrementScore() 
     { 
         score++;
