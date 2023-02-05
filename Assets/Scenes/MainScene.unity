@@ -167,7 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b7dec0cff08384f8ad76b560b66459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: level
+    clip: {fileID: 8300000, guid: 0da1d65950e82f043a87a15d493e2eb0, type: 3}
+    volume: 0.882
+    pitch: 0
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!1 &303085807
 GameObject:
   m_ObjectHideFlags: 0
