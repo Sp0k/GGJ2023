@@ -6,6 +6,7 @@ public class WorldGeneration : MonoBehaviour
 {
     public GameObject[] rooms;
     public EnemySpawner spawner;
+    public EnemySpawner spawner2;
     public Transform player;
     public List<GameObject> roomsList;
     public GameObject gate;
@@ -45,7 +46,8 @@ public class WorldGeneration : MonoBehaviour
 
             GenerateRoom(roomCount * roomSize);
 
-            spawner.maxEnemyCount += 5;
+            spawner.maxEnemyCount += 3;
+            spawner2.maxEnemyCount += 2;
         }
 
         if (player.position.x > (roomSize / 2) + (currentRoom * roomSize) + 0.5f)
