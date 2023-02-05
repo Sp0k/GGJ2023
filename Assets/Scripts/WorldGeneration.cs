@@ -7,6 +7,7 @@ public class WorldGeneration : MonoBehaviour
     public GameObject[] rooms;
     public Transform player;
     public List<GameObject> roomsList;
+    public GameObject gate;
     public float roomSize = 20;
     public int roomCount = 0;
 
@@ -17,13 +18,18 @@ public class WorldGeneration : MonoBehaviour
 
     private System.Random random;
 
+    private GameObject gateInstance;
+
     void Start()
     {
         random = new System.Random();
         roomsList = new List<GameObject>();
 
         GenerateRoom(0);
+
         GenerateRoom(roomSize);
+
+        gateInstance = Instantiate(gate, new Vector3(- roomSize / 2, 0, 0), Quaternion.identity);  
     }
 
     void Update()
@@ -41,14 +47,9 @@ public class WorldGeneration : MonoBehaviour
 
         if (player.position.x > (roomSize / 2) + (currentRoom * roomSize) + 0.5f)
         {
-            BoxCollider2D[] colliders = roomsList[0].GetComponents<BoxCollider2D>();
-
-            foreach (BoxCollider2D collider2D in colliders)
-            {
-                collider2D.enabled = true;
-            }
-
             currentRoom++;
+
+            gateInstance.transform.position = new Vector3(roomsList[0].transform.position.x +(roomSize / 2), 0, 0);
         }
     }
 
