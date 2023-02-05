@@ -26,7 +26,16 @@ public class EnemySpawner : MonoBehaviour
         {
             if (enemyCount <= maxEnemyCount)
             {
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-5f, 1f), 0), Quaternion.identity);
+                float x = Random.Range(-10f, 10);
+                float y = Random.Range(-5f, 1f);
+
+                while (Mathf.Sqrt((Mathf.Pow((player.position.x + x) - player.position.x, 2) + Mathf.Pow(y - player.position.y, 2))) < 4)
+                {
+                    x = Random.Range(-10f, 10);
+                    y = Random.Range(-5f, 1f);
+                }
+
+                GameObject newEnemy = Instantiate(enemy, new Vector3(player.position.x + x, y, 0), Quaternion.identity);
                 enemyCount++;
             }
             else
