@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Transform attackPoint;
+    public Animator playerAnim;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
@@ -19,12 +20,23 @@ public class Attack : MonoBehaviour
 
     private void PlayerAttack()
     {
+        playerAnim.SetBool("Attack", true);
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach (Collider2D enemies in hitEnemies)
         {
             enemies.GetComponent<EnemyBehavior>().Hit();
         }
+
+        StartCoroutine(PlayerAttackAnim());
+    }
+
+    private IEnumerator PlayerAttackAnim()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        playerAnim.SetBool("Attack", false);
     }
 
     private void OnDrawGizmosSelected()

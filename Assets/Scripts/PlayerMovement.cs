@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+                animator.SetBool("Dash", true);
             }
         }
 
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+                animator.SetBool("Dash", false);
             }
         }
 
