@@ -33,8 +33,5 @@ public class Attack : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-
-        // Hurt Enemies
-
     }
 }

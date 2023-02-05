@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,23 @@ public class Player : MonoBehaviour
     public int lifeCounter = 3;
     public GameObject[] lifeSprites;
 
-    public void Hit(GameObject enemy)
+    /// <summary>
+    /// Run when player is hit
+    /// </summary>
+    public void Hit()
     {
         lifeCounter--;
 
-        Debug.Log(lifeCounter);
+        lifeSprites[lifeCounter].SetActive(true);
 
-        // lifeSprites[lifeCounter].SetActive(false);
+        if (lifeCounter <= 0)
+        {
+            Die();
+        }
+    }
 
-        enemy.GetComponent<EnemyBehavior>().Die();
+    private void Die()
+    {
+        // 
     }
 }

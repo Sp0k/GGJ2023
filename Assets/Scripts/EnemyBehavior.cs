@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public float witanonymousn_range;
+    public float range;
     public float speed;
     public int health;
 
@@ -10,13 +10,15 @@ public class EnemyBehavior : MonoBehaviour
     {
         float dist = Vector3.Distance(EnemySpawner.player.position, transform.position);
 
-        if (dist <= witanonymousn_range)
+        if (dist <= range)
         {
             transform.position = Vector3.MoveTowards(transform.position, EnemySpawner.player.transform.position, Time.deltaTime);
-
         }
     }
 
+    /// <summary>
+    /// Runs when enemy is hit
+    /// </summary>
     public void Hit()
     {
         health--;
@@ -31,8 +33,11 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("enemy Dies");
-
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
