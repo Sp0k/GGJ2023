@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public bool isStart;
-public bool isCredits;
+
 
 public class startGame : MonoBehaviour
 {
+    public bool isStart;
+    public bool isCredits;
     public void LoadGame()
     {
         SceneManager.LoadScene(0);

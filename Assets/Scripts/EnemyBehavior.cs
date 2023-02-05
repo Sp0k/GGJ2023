@@ -23,7 +23,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         health--;
 
-        GameManager.UpdateHighScore(GameManager.highScore + 1);
+        GameManager.IncrementScore();
 
         if (health <= 0) 
         {
