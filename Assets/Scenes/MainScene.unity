@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1116738942}
+  audioManager: {fileID: 134846253}
 --- !u!1 &458623531
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +407,7 @@ MonoBehaviour:
   - {fileID: 475679437955896557, guid: ef2b483f93e2ef947bffdbd9ec28e2a8, type: 3}
   - {fileID: 7231646081520530471, guid: 2a03f01ba6d71384bb86a4b655ca01fb, type: 3}
   spawner: {fileID: 2097225695}
+  spawner2: {fileID: 651688072}
   player: {fileID: 1822901397}
   roomsList: []
   gate: {fileID: 2810903266351727061, guid: 45e6b24c04fe53441b3bb36106c2c045, type: 3}
@@ -458,6 +460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5964419470974646217, guid: f9135f0520b517b4d998237976d21e43, type: 3}
   maxEnemyCount: 2
+  enemyCount: 2
+  maxEnemy: 0
 --- !u!4 &651688073
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,3 +1603,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7152123820381869971, guid: 687682991a010524da30f908cc436108, type: 3}
   maxEnemyCount: 3
+  enemyCount: 2
+  maxEnemy: 0
